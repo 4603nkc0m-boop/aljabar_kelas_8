@@ -1,1 +1,358 @@
-word
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematika Kelas 8 - Perkalian & Pembagian Aljabar</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #10b981;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+        }
+
+        .formula-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--primary-light);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        /* Styling Quiz */
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .question p {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .options label {
+            display: block;
+            padding: 0.5rem 0.8rem;
+            margin: 0.3rem 0;
+            background: #f1f5f9;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .options label:hover {
+            background: #e2e8f0;
+        }
+
+        .btn {
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+        }
+
+        .btn-success {
+            background-color: var(--accent);
+        }
+
+        /* Form Absensi */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        #image-preview {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            display: none;
+            border: 1px solid #cbd5e1;
+        }
+
+        #score-result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 6px;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kelas 8 Matematika - Semester 1</h1>
+        <p>Sub Materi: Perkalian dan Pembagian Bentuk Aljabar</p>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            
+            <div>
+                <div class="card">
+                    <h2>📚 Materi Pembelajaran</h2>
+                    
+                    <h3>1. Perkalian Bentuk Aljabar</h3>
+                    <p>Perkalian aljabar menggunakan sifat distributif perkalian terhadap penjumlahan/pengurangan:</p>
+                    <div class="formula-box">
+                        <ul>
+                            <li><b>Suku Tunggal:</b> <i>a(b + c) = ab + ac</i></li>
+                            <li><b>Suku Dua:</b> <i>(a + b)(c + d) = ac + ad + bc + bd</i></li>
+                            <li><b>Aturan Pangkat:</b> <i>x<sup>m</sup> × x<sup>n</sup> = x<sup>(m + n)</sup></i></li>
+                        </ul>
+                    </div>
+                    <p><b>Contoh Soal:</b></p>
+                    <p>Hitunglah: 3x(2x - 5)</p>
+                    <p><b>Penyelesaian:</b> 3x(2x) - 3x(5) = <b>6x² - 15x</b></p>
+
+                    <br>
+                    <h3>2. Pembagian Bentuk Aljabar</h3>
+                    <p>Pada pembagian aljabar, koefisien dibagi dengan koefisien, dan variabel sejenis dibagi dengan mengurangi pangkatnya:</p>
+                    <div class="formula-box">
+                        <ul>
+                            <li><b>Aturan Pangkat:</b> <i>x<sup>m</sup> ÷ x<sup>n</sup> = x<sup>(m - n)</sup></i> (dengan x ≠ 0)</li>
+                        </ul>
+                    </div>
+                    <p><b>Contoh Soal:</b></p>
+                    <p>Hitunglah: 12x³y² ÷ 4xy</p>
+                    <p><b>Penyelesaian:</b> (12 ÷ 4) · x<sup>(3-1)</sup> · y<sup>(2-1)</sup> = <b>3x²y</b></p>
+                </div>
+
+                <div class="card">
+                    <h2>💡 Kuis Interaktif</h2>
+                    <form id="quiz-form">
+                        
+                        <div class="question">
+                            <p>1. Hasil perkalian dari 4a(3a - 2b) adalah...</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="A"> A. 12a - 8ab</label>
+                                <label><input type="radio" name="q1" value="B"> B. 12a² - 8ab</label>
+                                <label><input type="radio" name="q1" value="C"> C. 7a² - 6ab</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <p>2. Hasil dari (x + 3)(x + 5) adalah...</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="A"> A. x² + 8x + 15</label>
+                                <label><input type="radio" name="q2" value="B"> B. x² + 15x + 8</label>
+                                <label><input type="radio" name="q2" value="C"> C. x² + 2x + 15</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <p>3. Hasil pembagian dari 15p⁴q² ÷ 3p²q adalah...</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="A"> A. 5p²q</label>
+                                <label><input type="radio" name="q3" value="B"> B. 5p⁶q³</label>
+                                <label><input type="radio" name="q3" value="C"> C. 3p²q</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn" onclick="checkQuiz()">Cek Jawaban</button>
+                    </form>
+
+                    <div id="score-result"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="card">
+                    <h2>📋 Absensi Siswa</h2>
+                    <form id="attendance-form" onsubmit="submitAttendance(event)">
+                        <div class="form-group">
+                            <label for="student-name">Nama Lengkap</label>
+                            <input type="text" id="student-name" placeholder="Masukkan nama..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="student-class">Kelas</label>
+                            <select id="student-class" required>
+                                <option value="">-- Pilih Kelas --</option>
+                                <option value="8A">8-A</option>
+                                <option value="8B">8-B</option>
+                                <option value="8C">8-C</option>
+                                <option value="8D">8-D</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="student-photo">Foto Swafoto / Bukti Belajar</label>
+                            <input type="file" id="student-photo" accept="image/*" onchange="previewImage(event)" required>
+                            <img id="image-preview" alt="Preview Foto">
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Kirim Absen</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Media Pembelajaran Matematika SMP Kelas 8</p>
+    </footer>
+
+    <script>
+        // Logika Kuis Interaktif
+        function checkQuiz() {
+            const answers = { q1: 'B', q2: 'A', q3: 'A' };
+            let score = 0;
+            let total = 3;
+
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (!q1 || !q2 || !q3) {
+                alert("Harap jawab semua soal terlebih dahulu!");
+                return;
+            }
+
+            if (q1.value === answers.q1) score++;
+            if (q2.value === answers.q2) score++;
+            if (q3.value === answers.q3) score++;
+
+            const resultDiv = document.getElementById('score-result');
+            const finalScore = Math.round((score / total) * 100);
+
+            resultDiv.style.display = 'block';
+            if (finalScore >= 70) {
+                resultDiv.style.backgroundColor = '#d1fae5';
+                resultDiv.style.color = '#065f46';
+                resultDiv.innerHTML = `Selamat! Nilai Kamu: ${finalScore} / 100 🎯`;
+            } else {
+                resultDiv.style.backgroundColor = '#fee2e2';
+                resultDiv.style.color = '#991b1b';
+                resultDiv.innerHTML = `Nilai Kamu: ${finalScore} / 100. Pelajari kembali materinya ya! 💪`;
+            }
+        }
+
+        // Preview Foto Absensi
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('image-preview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            if(event.target.files[0]) {
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        }
+
+        // Logika Submit Form Absensi
+        function submitAttendance(event) {
+            event.preventDefault();
+            const name = document.getElementById('student-name').value;
+            const studentClass = document.getElementById('student-class').value;
+            
+            alert(`Absensi Berhasil!\nNama: ${name}\nKelas: ${studentClass}\nFoto berhasil dilampirkan.`);
+            
+            // Reset Form
+            document.getElementById('attendance-form').reset();
+            document.getElementById('image-preview').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
